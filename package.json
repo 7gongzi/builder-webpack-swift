@@ -1,6 +1,6 @@
 {
   "name": "builder-webpack-swift",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,9 @@
     "coverage": "nyc npm run test",
     "eslint": "eslint ./lib --fix"
   },
-  "keywords": ["webpack"],
+  "keywords": [
+    "webpack"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
