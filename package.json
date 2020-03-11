@@ -1,23 +1,36 @@
 {
   "name": "builder-webpack-swift",
   "version": "1.0.3",
-  "description": "",
+  "description": "builder webpack swift",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha",
-    "coverage": "nyc npm run test",
-    "eslint": "eslint ./lib --fix"
-  },
   "keywords": [
     "webpack"
   ],
-  "author": "",
+  "author": "7gongzi",
   "license": "ISC",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm run test",
+    "eslint": "eslint ./lib --fix",
+    "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0",
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run precommit"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "babel-eslint": "^10.1.0",
+    "conventional-changelog-cli": "^2.0.31",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
     "nyc": "^15.0.0"
   },
   "dependencies": {
@@ -36,5 +49,10 @@
     "rimraf": "^3.0.2",
     "webpack": "^4.42.0",
     "webpack-merge": "^4.2.2"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx}": [
+      "eslint --fix"
+    ]
   }
 }

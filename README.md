@@ -1,10 +1,16 @@
 # builder-webpack-swift
 builder webpack swift
 
+# Getting started
 ```js
-// 单元测试
+npm install --save-dev builder-webpack-swift
+```
+
+# package test
+```js
+// unit test
 npm run test
 
-// 测试覆盖率
+// test coverage
 npm run coverage
 ```
